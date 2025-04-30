@@ -1,7 +1,12 @@
+package commands;
+
+import event.Event;
+import interfaces.Command;
+
 public class UpdateNameCommand implements Command {
-    private Event event;
-    private String oldName;
-    private String newName;
+    private final Event event;
+    private final String oldName;
+    private final String newName;
 
     public UpdateNameCommand(Event event, String newName) {
         this.event = event;

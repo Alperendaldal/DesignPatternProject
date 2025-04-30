@@ -4,22 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="3: Event Modification">
+      <change afterPath="$PROJECT_DIR$/src/enums/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/Tag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CategorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CategorySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DateSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NameSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NameSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TagSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TagSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateCategoriesCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateCategoriesCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateTagsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateTagsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventModules/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventModules/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventModules/EventModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventModification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,39 +43,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaano/OneDrive/Belgeler/GitHub/DesignPatternProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -78,7 +78,20 @@
       <option name="presentableId" value="Default" />
       <updated>1745863085596</updated>
       <workItem from="1745863086645" duration="2000" />
+      <workItem from="1745989901656" duration="645000" />
+      <workItem from="1746001520739" duration="316000" />
+      <workItem from="1746001856467" duration="1405000" />
+      <workItem from="1746003502601" duration="2279000" />
     </task>
+    <task id="LOCAL-00001" summary="3: Event Modification">
+      <option name="closed" value="true" />
+      <created>1746003258806</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746003258806</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,14 +108,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3: Event Modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="3: Event Modification" />
   </component>
 </project>

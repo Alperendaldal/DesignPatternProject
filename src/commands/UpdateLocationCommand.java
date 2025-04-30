@@ -1,7 +1,12 @@
+package commands;
+
+import event.Event;
+import interfaces.Command;
+
 public class UpdateLocationCommand implements Command {
-    private Event event;
-    private String oldLocation;
-    private String newLocation;
+    private final Event event;
+    private final String oldLocation;
+    private final String newLocation;
 
     public UpdateLocationCommand(Event event, String newLocation) {
         this.event = event;
