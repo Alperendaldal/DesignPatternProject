@@ -1,8 +1,14 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Event {
     String name;
-    String date;
+    LocalDateTime date;
     String tag;
-    String category;
+    List<String> categories;
+    String location;
+
+    public Event(){}
 
     public Event(String name, String category, String tag, String date) {
         this.name = name;
@@ -10,6 +16,8 @@ public class Event {
         this.tag = tag;
         this.date = date;
     }
+
+
 
     public void setTag(String tag) {
         this.tag = tag;
@@ -39,7 +47,24 @@ public class Event {
     public String getCategory(){
         return category;
     };
-    //fill class
 
+    public String getLocation() {
+        return location;
+    }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 }
