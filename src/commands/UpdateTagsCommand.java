@@ -2,23 +2,27 @@ package commands;
 
 import event.Event;
 import interfaces.Command;
+import enums.Tag;
+import java.util.Set;
 
 public class UpdateTagsCommand implements Command {
     private final Event event;
-    private final String newTag;
+    private final Set<Tag>  newTagSet;
+    private final Set<Tag>  oldTagSet;
 
-    public UpdateTagsCommand(Event event, String newTag) {
+    public UpdateTagsCommand(Event event, Set<Tag> newTagSet) {
         this.event = event;
-        this.newTag = newTag;
+        this.oldTagSet = event.getTags();
+        this.newTagSet = newTagSet;
     }
 
     @Override
     public void execute() {
-        event.getTags().add(newTag);
+        event.setTags(newTagSet);
     }
 
     @Override
     public void undo() {
-        event.getTags().remove(newTag);
+        event.setTags(oldTagSet);
     }
 }

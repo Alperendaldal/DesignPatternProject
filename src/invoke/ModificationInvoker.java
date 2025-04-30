@@ -5,7 +5,7 @@ import interfaces.Command;
 import java.util.Stack;
 
 public class ModificationInvoker {
-    private Stack<Command> history = new Stack<>();
+    private final Stack<Command> history = new Stack<>();
 
     public void executeCommand(Command command) {
         command.execute();
