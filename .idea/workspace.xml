@@ -5,28 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ModificationInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UpdateLocationCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UpdateNameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CategorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CategorySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DateSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventModification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NameSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NameSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TagSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TagSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,11 +35,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kaano/OneDrive/Belgeler/GitHub/DesignPatternProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,11 +47,25 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
       </set>
     </attachedChunks>
   </component>
@@ -72,7 +78,6 @@
       <option name="presentableId" value="Default" />
       <updated>1745863085596</updated>
       <workItem from="1745863086645" duration="2000" />
-      <workItem from="1745989901656" duration="645000" />
     </task>
     <servers />
   </component>
@@ -89,5 +94,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
