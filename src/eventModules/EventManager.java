@@ -1,3 +1,11 @@
+package eventModules;
+
+import event.Event;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class EventManager {
     private static EventManager instance;
     private List<Event> events = new ArrayList<>();

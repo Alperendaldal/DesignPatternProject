@@ -1,7 +1,11 @@
+package searchStrategies;
+
+import interfaces.SearchStrategy;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DateSearch implements SearchStrategy{
+public class DateSearch implements SearchStrategy {
 
     @Override
     public List<Event> search(List<Event> events, String keyword) {

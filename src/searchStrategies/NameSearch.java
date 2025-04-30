@@ -1,8 +1,11 @@
+package searchStrategies;
+
+import interfaces.SearchStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class NameSearch implements SearchStrategy{
+public class NameSearch implements SearchStrategy {
     @Override
     public List<Event> search(List<Event> events, String keyword){
         List<Event> list = new ArrayList<>();

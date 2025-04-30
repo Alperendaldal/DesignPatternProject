@@ -1,5 +1,13 @@
+package eventModules;
+
+import event.Event;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
 public class EventCreator {
-    private Event event = new Event();
+    private final Event event = new Event();
 
     public EventCreator setName(String name) {
         event.setName(name);
@@ -11,8 +19,13 @@ public class EventCreator {
         return this;
     }
 
-    public EventCreator setDateTime(LocalDateTime dateTime) {
-        event.setDateTime(dateTime);
+    public EventCreator setDate(LocalDate date) {
+        event.setDate(date);
+        return this;
+    }
+
+    public EventCreator setTime(LocalTime time){
+        event.setTime(time);
         return this;
     }
 
@@ -23,6 +36,11 @@ public class EventCreator {
 
     public EventCreator setTags(List<String> tags) {
         event.setTags(tags);
+        return this;
+    }
+
+    public EventCreator setOrganizer(String organizer){
+        event.setOrganizer(organizer);
         return this;
     }
 

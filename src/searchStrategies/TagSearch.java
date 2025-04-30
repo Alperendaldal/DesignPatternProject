@@ -1,3 +1,7 @@
+package searchStrategies;
+
+import interfaces.SearchStrategy;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

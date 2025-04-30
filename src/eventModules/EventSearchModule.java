@@ -1,3 +1,5 @@
+package eventModules;
+
 import java.util.List;
 
 public class EventSearchModule {
