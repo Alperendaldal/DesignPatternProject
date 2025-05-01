@@ -1,19 +1,27 @@
+package searchStrategies;
+
+import enums.Category;
+import event.Event;
+import interfaces.SearchStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Set;
 
-public class CategorySearch implements SearchStrategy{
-    public List<Event> search(List<Event> events, String keyword){
-    List<Event> list = new ArrayList<>();
-    for (Event event : events){
-        List<String> categories = new ArrayList<>();
-        categories = event.getCategories();
 
-        for (String category : categories){
-            if(keyword.toLowerCase().equals(category.toLowerCase())){list.add(event);};
+public class CategorySearch implements SearchStrategy {
+
+    public List<Event> search(List<Event> events, Object keyword){
+        List<Event> result = new ArrayList<>();
+        for (Event event : events) {
+            Set<Category> categories = event.getCategories();
+            for (Category category : categories) {
+                if (keyword == category) {
+                    result.add(event);
+                    break;
+                }
+            }
         }
-    }
-
-    return list;
-    }
+        return result;
+}
 }

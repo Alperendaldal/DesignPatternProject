@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="3: Event Modification">
-      <change afterPath="$PROJECT_DIR$/src/enums/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/Tag.java" afterDir="false" />
+    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="updated Search method">
+      <change afterPath="$PROJECT_DIR$/src/EventRegistrationModule/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/Observer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateCategoriesCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateCategoriesCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateTagsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateTagsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eventModules/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventModification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventModules/EventRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventRegistrationModule/EventRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventModules/EventSearchModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventSearchModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/SearchStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/SearchStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/NameSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/NameSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +27,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Alperendaldal"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Alperendaldal/DesignPatternProject.git",
+    "accountId": "ca8e6c31-9922-4677-876c-ff7b668b7065"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -43,29 +57,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaano/OneDrive/Belgeler/GitHub/DesignPatternProject&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kaano/OneDrive/Belgeler/GitHub/DesignPatternProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
       </set>
     </attachedChunks>
   </component>
@@ -82,6 +111,7 @@
       <workItem from="1746001520739" duration="316000" />
       <workItem from="1746001856467" duration="1405000" />
       <workItem from="1746003502601" duration="2279000" />
+      <workItem from="1746091880779" duration="5559000" />
     </task>
     <task id="LOCAL-00001" summary="3: Event Modification">
       <option name="closed" value="true" />

@@ -1,5 +1,6 @@
 package eventModules;
 
+import EventRegistrationModule.EventRegistration;
 import event.Event;
 
 import java.util.ArrayList;

@@ -2,10 +2,12 @@ package event;
 
 import enums.Category;
 import enums.Tag;
+import interfaces.Observer;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -17,6 +19,7 @@ public class Event {
     Set<Category> categories;
     String location;
     String organizer;
+    private List<Observer> observers = new ArrayList<>();
 
     public Event(){}
 
@@ -29,6 +32,7 @@ public class Event {
         this.location = location;
         this.organizer = organizer;
     }
+
 
     public String getName() {
         return name;
@@ -101,4 +105,29 @@ public class Event {
     public void setOrganizer(String organizer) {
         this.organizer = organizer;
     }
+
+
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
+    }
+    public void changeDate(LocalDate newDate) {
+        this.date = newDate;
+        notifyObservers("The date for event '" + name + "' has been updated to " + newDate);
+    }
+
+    public int getRegistrationCount() {
+        return observers.size();
+    }
+
+
 }

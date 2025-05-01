@@ -1,5 +1,8 @@
 package eventModules;
 
+import event.Event;
+import interfaces.SearchStrategy;
+
 import java.util.List;
 
 public class EventSearchModule {
@@ -9,7 +12,7 @@ public class EventSearchModule {
         this.searchMethod = searchMethod;
     }
 
-    public List<Event> search(List<Event> events, String keyword) {
+    public List<Event> search(List<Event> events, Object keyword) {
         if (searchMethod == null) throw new IllegalStateException("Search strategy not set.");
         return searchMethod.search(events, keyword);
     }

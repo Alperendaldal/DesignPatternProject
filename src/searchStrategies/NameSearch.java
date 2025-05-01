@@ -1,15 +1,23 @@
+package searchStrategies;
+
+import event.Event;
+import interfaces.SearchStrategy;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 
-public class NameSearch implements SearchStrategy{
+public class NameSearch implements SearchStrategy {
     @Override
-    public List<Event> search(List<Event> events, String keyword){
+    public List<Event> search(List<Event> events, Object keyword){
+
         List<Event> list = new ArrayList<>();
+        String keywordd = keyword.toString();
         for (Event event : events){
 
-            if(keyword.toLowerCase().equals(event.getName().toLowerCase())){list.add(event);};
+
+            if(keywordd.toLowerCase().equals(event.getName().toLowerCase())){list.add(event);};
         }
         return list;  /* events.stream().
                 filter(e -> e.getName().toLowerCase()

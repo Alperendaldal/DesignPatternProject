@@ -1,27 +1,50 @@
+import EventRegistrationModule.EventRegistration;
+import EventRegistrationModule.Member;
 import event.Event;
 import eventModules.EventSearchModule;
+import searchStrategies.DateSearch;
 import searchStrategies.NameSearch;
 
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String keyword = scanner.next().toLowerCase();
-        Event event1 = new Event("concert","concert","rock","10,10,2010");
-        Event event2 = new Event("concert2","concert2","rock2","10,10,2012");
-        Event event3 = new Event("concert3","concert3","rock3","10,10,2013");
+        /* Scanner scanner = new Scanner(System.in);
+        String keyword = scanner.next().toLowerCase(); */
+        Event event1 = new Event();
+        Event event2 = new Event();
+
+        LocalDate now = LocalDate.now();
+        event1.setName("now");
+        event2.setName("now");
+
+
         List<Event> list = new ArrayList<>();
         list.add(event1);
         list.add(event2);
-        list.add(event3);
+
+        Member alice = new Member("Alice");
+        Member bob = new Member("Bob");
+
+        EventRegistration reg = new EventRegistration();
+        reg.register(event1, alice);
+        reg.register(event1, bob);
+        reg.cancel(event1,bob);
+
+        event1.changeDate(LocalDate.of(2025, 5, 1));
+
+
         EventSearchModule searchModule = new EventSearchModule();
 
-        //if statment
         searchModule.setSearchMethod(new NameSearch());
-        List<Event> results = searchModule.search(list, keyword);
+        List<Event> results = searchModule.search(list, "now");
+
         System.out.println(results);
+
+
     }
 }

@@ -1,18 +1,23 @@
+package searchStrategies;
+
+import event.Event;
+import interfaces.SearchStrategy;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DateSearch implements SearchStrategy{
+public class DateSearch implements SearchStrategy {
 
     @Override
-    public List<Event> search(List<Event> events, String keyword){
-        List<Event> list = new ArrayList<>();
-        for (Event event : events){
-            if(keyword.toLowerCase().equals(event.getDate().toString().toLowerCase())){list.add(event);};
+    public List<Event> search(List<Event> events, Object keyword) {
+        List<Event> result = new ArrayList<>();
+        for (Event event : events) {
+            if (event.getDate().equals(keyword)) {
+                result.add(event);
+            }
         }
-        return list;  /* events.stream().
-                filter(e -> e.getName().toLowerCase()
-                        .contains(keyword.toLowerCase()))
-                .collect(Collectors.toList()); */
+        return result;
     }
 }
