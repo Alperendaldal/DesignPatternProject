@@ -1,48 +1,69 @@
 import EventRegistrationModule.EventRegistration;
-import EventRegistrationModule.Member;
-import event.Event;
+import eventModules.EventCreator;
+import eventModules.EventManager;
+import eventModules.EventModification;
 import eventModules.EventSearchModule;
-import searchStrategies.NameSearch;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
-        /* Scanner scanner = new Scanner(System.in);
-        String keyword = scanner.next().toLowerCase(); */
-        Event event1 = new Event();
-        Event event2 = new Event();
+      Scanner scanner = new Scanner(System.in);
 
-        LocalDate now = LocalDate.now();
-        event1.setName("now3");
-        event2.setName("now2");
+        EventManager manager = EventManager.getInstance();
 
+        while(true){
 
-        List<Event> list = new ArrayList<>();
-        list.add(event1);
-        list.add(event2);
-
-        Member alice = new Member("Alice");
-        Member bob = new Member("Bob");
-
-        EventRegistration reg = new EventRegistration();
-        reg.register(event1, alice);
-        reg.register(event1, bob);
-        reg.cancel(event1,bob);
-
-        event1.changeDate(LocalDate.of(2025, 5, 1));
+            System.out.println("ÖzDal Event Management System!");
+            System.out.println();
+            System.out.println();
+            System.out.println("1. Create Event");
+            System.out.println("2. Modify Event");
+            System.out.println("3. Enroll for an Event");
+            System.out.println("4. Search Event");
+            System.out.println("5. Exit");
 
 
-        EventSearchModule searchModule = new EventSearchModule();
+            try{
+                int option = scanner.nextInt();
+                scanner.nextLine();
 
-        searchModule.setSearchMethod(new NameSearch());
-        List<Event> results = searchModule.search(list, "now");
+                switch (option){
+                    case 1:
+                        EventCreator creator = manager.getCreator();
+                        //Creation operation
+                        break;
+                    case 2:
+                        EventModification modifier = manager.getEventModifier();
+                        //Modification operation
+                        break;
 
-        System.out.println(results);
+                    case 3:
+                        EventRegistration registrar = manager.getEventRegistrar();
+                        //Registration operation
+                        break;
 
+                    case 4:
+                        EventSearchModule searcher = manager.getEventSearcher();
+                        //Search operations
+                        break;
 
+                    case 5:
+                    scanner.close();
+                    return;
+                    default:
+                        System.out.println("Invalid option, try again.");
+                }
+            }catch (InputMismatchException e){
+                System.out.println("Input must be a number. Try again!");
+            }catch(NoSuchElementException e){
+                System.out.println("Input cannot be empty. Trey again!");
+            }catch(Exception e){
+                System.out.println("Something went unexpectedly wrong? Error: ".concat(e.getMessage()));
+            }
+
+        }
     }
 
 
