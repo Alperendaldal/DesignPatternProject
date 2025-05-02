@@ -1,18 +1,21 @@
 package searchStrategies;
 
 import event.Event;
+import interfaces.SearchStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrganizerSearch {
-    public List<Event> search(List<Event> events, Object keyword){
+public class OrganizerSearch implements SearchStrategy {
+    public List<Event> search(List<Event> events, String keyword) {
 
         List<Event> list = new ArrayList<>();
-        String keywordd = keyword.toString();
-        for (Event event : events){
 
-            if(keywordd.toLowerCase().equals(event.getOrganizer().toLowerCase())){list.add(event);};
+        for (Event event : events) {
+
+            if (event.getOrganizer().toLowerCase().contains(keyword.toLowerCase()))
+                list.add(event);
+
         }
         return list;
     }

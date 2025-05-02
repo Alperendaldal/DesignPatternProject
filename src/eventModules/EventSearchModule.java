@@ -12,7 +12,7 @@ public class EventSearchModule {
         this.searchMethod = searchMethod;
     }
 
-    public List<Event> search(List<Event> events, Object keyword) {
+    public List<Event> search(List<Event> events, String keyword) {
         if (searchMethod == null) throw new IllegalStateException("Search strategy not set.");
         return searchMethod.search(events, keyword);
     }

@@ -11,12 +11,12 @@ import java.util.Set;
 
 public class CategorySearch implements SearchStrategy {
 
-    public List<Event> search(List<Event> events, Object keyword){
+    public List<Event> search(List<Event> events, String keyword){
         List<Event> result = new ArrayList<>();
         for (Event event : events) {
             Set<Category> categories = event.getCategories();
             for (Category category : categories) {
-                if (keyword == category) {
+                if (category.isEqual(keyword)) {
                     result.add(event);
                     break;
                 }

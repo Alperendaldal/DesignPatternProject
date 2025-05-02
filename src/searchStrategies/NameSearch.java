@@ -10,12 +10,12 @@ import java.util.List;
 
 public class NameSearch implements SearchStrategy {
     @Override
-    public List<Event> search(List<Event> events, Object keyword){
+    public List<Event> search(List<Event> events, String keyword){
 
         List<Event> list = new ArrayList<>();
-        String keywordd = keyword.toString();
         for (Event event : events){
-            if(keywordd.toLowerCase().equals(event.getName().toLowerCase())){list.add(event);};
+            if(event.getName().toLowerCase().contains(keyword.toLowerCase())){list.add(event);}
+
         }
         return list;
     }

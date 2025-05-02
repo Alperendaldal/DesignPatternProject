@@ -1,10 +1,8 @@
 package eventModules;
 
-import EventRegistrationModule.EventRegistration;
 import event.Event;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class EventManager {
@@ -14,6 +12,7 @@ public class EventManager {
     private final EventModification eventModifier = new EventModification();
     private final EventRegistration eventRegistrar = new EventRegistration();
     private final EventSearchModule eventSearcher = new EventSearchModule();
+    private final HashSet<Member> members = new HashSet<>();
 
 
     private EventManager() {}
@@ -29,6 +28,24 @@ public class EventManager {
         return instance;
     }
 
+    public Set<Member> getMembers() {
+        return members;
+    }
+    public boolean addMember(Member m){
+        return members.add(m);
+    }
+
+    public Member getOrCreateMember(String name){
+        Member existingMember = this.getMembers().stream().filter(t -> Objects.equals(t.getName(), name)).findFirst().orElse(null);
+
+        if(existingMember != null)
+            return existingMember;
+
+        Member newMember = new Member(name);
+        this.getMembers().add(newMember);
+        return newMember;
+    }
+
 
     public List<Event> getEvents() {
         return events;
@@ -37,6 +54,17 @@ public class EventManager {
     public EventCreator getCreator() {
         return creator;
     }
+
+    public boolean addEvent(Event e){
+        return this.getEvents().add(e);
+    }
+
+    public Event getEventIfExists(String name) {
+        return this.getEvents().stream().filter(e -> e.getName().equals(name)).findFirst().orElse(null);
+    }
+
+
+
 
     public EventModification getEventModifier() {
         return eventModifier;

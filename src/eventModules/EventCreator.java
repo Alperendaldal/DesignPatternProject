@@ -9,24 +9,83 @@ import java.util.stream.Collectors;
 
 public class EventCreator {
     private final Event event = new Event();
+    private boolean hasNameFieldSet = false;
+    private boolean hasDateFieldSet = false;
+    private boolean hasTimeFieldSet = false;
+    private boolean hasLocationFieldSet = false;
+    private boolean hasOrganizerSet = false;
+
+    public boolean isHasNameFieldSet() {
+        return hasNameFieldSet;
+    }
+
+    public boolean isHasDateFieldSet() {
+        return hasDateFieldSet;
+    }
+
+    public boolean isHasTimeFieldSet() {
+        return hasTimeFieldSet;
+    }
+
+    public boolean isHasLocationFieldSet() {
+        return hasLocationFieldSet;
+    }
+
+    public boolean isHasOrganizerSet() {
+        return hasOrganizerSet;
+    }
+
+    public boolean isEventBelongToCategory(Category category){
+        return this.event.getCategories().contains(category);
+    }
 
     public EventCreator setName(String name) {
+
+
+
+        if(name != null && name.isEmpty()) {
+            hasNameFieldSet = false;
+            System.out.println("Name of the event cannot be null or invalid");
+            return this;
+        }
         event.setName(name);
+        hasNameFieldSet = true;
+
         return this;
     }
 
     public EventCreator setLocation(String location) {
+        if(location == null || location.isEmpty()) {
+            System.out.println("Location of the event cannot be null or invalid");
+            return this;
+        }
+
         event.setLocation(location);
+        hasLocationFieldSet = true;
         return this;
     }
 
     public EventCreator setDate(LocalDate date) {
+
+        if(date == null)
+        {
+            System.out.println("Date of the event cannot be null");
+            return this;
+        }
+
         event.setDate(date);
+        hasDateFieldSet = true;
         return this;
     }
 
     public EventCreator setTime(LocalTime time){
+        if(time == null)
+        {
+            System.out.println("Time of the event cannot be null");
+            return this;
+        }
         event.setTime(time);
+        hasTimeFieldSet = true;
         return this;
     }
 
@@ -66,11 +125,22 @@ public class EventCreator {
 
 
     public EventCreator setOrganizer(String organizer){
+        if(organizer == null || organizer.isEmpty()) {
+            System.out.println("Organizer of the event cannot be null or invalid");
+            return this;
+        }
+
         event.setOrganizer(organizer);
+        hasOrganizerSet = true;
         return this;
     }
 
+    public boolean isReadyToBuild(){
+        return hasOrganizerSet && hasTimeFieldSet&& hasDateFieldSet&& hasLocationFieldSet&&hasNameFieldSet;
+    }
     public Event build() {
-        return event;
+
+
+        return this.isReadyToBuild() ? event : null;
     }
 }

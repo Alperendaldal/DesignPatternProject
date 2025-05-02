@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -19,7 +20,7 @@ public class Event {
     Set<Category> categories;
     String location;
     String organizer;
-    private List<Observer> observers = new ArrayList<>();
+    private HashSet<Observer> observers = new HashSet<>();
 
     public Event(){}
 
@@ -94,6 +95,7 @@ public class Event {
         return location;
     }
 
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -105,7 +107,6 @@ public class Event {
     public void setOrganizer(String organizer) {
         this.organizer = organizer;
     }
-
 
     public void registerObserver(Observer observer) {
         observers.add(observer);
@@ -125,8 +126,16 @@ public class Event {
         notifyObservers("The date for event '" + name + "' has been updated to " + newDate);
     }
 
+    public HashSet<Observer> getObservers() {
+        return observers;
+    }
+
     public int getRegistrationCount() {
         return observers.size();
+    }
+
+    public boolean isMemberEnrolled(Observer o){
+        return this.getObservers().contains(o);
     }
 
 

@@ -9,12 +9,12 @@ import java.util.Set;
 
 public class TagSearch implements SearchStrategy {
     @Override
-    public List<Event> search(List<Event> events, Object keyword){
+    public List<Event> search(List<Event> events, String keyword){
         List<Event> result = new ArrayList<>();
         for (Event event : events) {
             Set<Tag> tags = event.getTags();
             for (Tag tag : tags) {
-                if (keyword == tag) {
+                if (tag.isEqual(keyword)) {
                     result.add(event);
                     break;
                 }
