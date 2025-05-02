@@ -15,20 +15,18 @@ public class NameSearch implements SearchStrategy {
         List<Event> list = new ArrayList<>();
         String keywordd = keyword.toString();
         for (Event event : events){
-
-
             if(keywordd.toLowerCase().equals(event.getName().toLowerCase())){list.add(event);};
         }
-        return list;  /* events.stream().
-                filter(e -> e.getName().toLowerCase()
-                        .contains(keyword.toLowerCase()))
-                .collect(Collectors.toList()); */
+        return list;
     }
-    public List<Event> orderDesceding(List<Event> events){
-        List<Event> list = new ArrayList<>();
+    public List<Event> sortByNameAscending(List<Event> events) {
         events.sort(Comparator.comparing(Event::getName, String.CASE_INSENSITIVE_ORDER));
         return events;
-        //not working
     }
 
+    public List<Event> sortByNameDescending(List<Event> events) {
+        events.sort(Comparator.comparing(Event::getName, String.CASE_INSENSITIVE_ORDER).reversed());
+        return events;
+    }
 }
+

@@ -1,7 +1,5 @@
 package invoke;
-
 import interfaces.Command;
-
 import java.util.Stack;
 
 public class ModificationInvoker {

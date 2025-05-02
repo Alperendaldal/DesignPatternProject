@@ -13,7 +13,6 @@ public class EventManager {
     private final EventCreator creator = new EventCreator();
     private final EventModification eventModifier = new EventModification();
     private final EventRegistration eventRegistrar = new EventRegistration();
-
     private final EventSearchModule eventSearcher = new EventSearchModule();
 
 

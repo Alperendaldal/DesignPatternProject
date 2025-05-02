@@ -1,12 +1,9 @@
 package eventModules;
-
 import enums.Category;
 import enums.Tag;
 import event.Event;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

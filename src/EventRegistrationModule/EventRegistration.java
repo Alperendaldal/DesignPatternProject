@@ -1,5 +1,4 @@
 package EventRegistrationModule;
-
 import event.Event;
 
 public class EventRegistration {

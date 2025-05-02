@@ -2,14 +2,11 @@ import EventRegistrationModule.EventRegistration;
 import EventRegistrationModule.Member;
 import event.Event;
 import eventModules.EventSearchModule;
-import searchStrategies.DateSearch;
 import searchStrategies.NameSearch;
-
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,8 +16,8 @@ public class Main {
         Event event2 = new Event();
 
         LocalDate now = LocalDate.now();
-        event1.setName("now");
-        event2.setName("now");
+        event1.setName("now3");
+        event2.setName("now2");
 
 
         List<Event> list = new ArrayList<>();
@@ -47,4 +44,6 @@ public class Main {
 
 
     }
+
+
 }
