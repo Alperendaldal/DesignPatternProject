@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="10: Main method imp" />
+    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="11: CLI imp">
+      <change afterPath="$PROJECT_DIR$/src/eventModules/EventRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eventModules/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/Tag.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,6 +106,8 @@
       <workItem from="1746091880779" duration="8440000" />
       <workItem from="1746166970998" duration="801000" />
       <workItem from="1746174615109" duration="9178000" />
+      <workItem from="1746184032592" duration="88000" />
+      <workItem from="1746426582536" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="3: Event Modification">
       <option name="closed" value="true" />
@@ -118,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746097550724</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="11: CLI imp">
+      <option name="closed" value="true" />
+      <created>1746184071880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746184071880</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +154,8 @@
     <MESSAGE value="3: Event Modification" />
     <MESSAGE value="updated Search method and created register structure" />
     <MESSAGE value="10: Main method imp" />
-    <option name="LAST_COMMIT_MESSAGE" value="10: Main method imp" />
+    <MESSAGE value="11: CLI imp" />
+    <option name="LAST_COMMIT_MESSAGE" value="11: CLI imp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
