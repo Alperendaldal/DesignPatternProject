@@ -17,6 +17,8 @@ public class NameSearch implements SearchStrategy {
             if(event.getName().toLowerCase().contains(keyword.toLowerCase())){list.add(event);}
 
         }
+        if (list.isEmpty())
+            System.out.println("Event not found");
         return list;
     }
     public List<Event> sortByNameAscending(List<Event> events) {

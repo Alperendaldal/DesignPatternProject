@@ -14,6 +14,8 @@ public class LocationSearch implements SearchStrategy {
             if (event.getLocation().contains(keyword))
                 list.add(event);
 
+        if (list.isEmpty())
+            System.out.println("Event not found");
         return list;
     }
 }

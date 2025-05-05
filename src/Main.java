@@ -471,6 +471,8 @@ public class Main {
                                 break;
                         }
                         for (Event result : results) System.out.println(result.getName());
+                        System.out.println("Press any key...");
+                        String a = scanner.nextLine();
                         break;
 
                     case 4:
@@ -495,10 +497,17 @@ public class Main {
                                 case 1:
                                     if (!event.isMemberEnrolled(member)) {
                                         registrar.register(event, member);
-                                    } else System.out.println("Member already registered");
+                                        System.out.println("Press enter...");
+                                        a = scanner.nextLine();
+
+                                    } else{ System.out.println("Member already registered");
+                                    System.out.println("Press enter...");
+                                    a = scanner.nextLine();}
                                     break;
                                 case 2:
                                     registrar.cancel(event, member);
+                                    System.out.println("Press enter...");
+                                    a = scanner.nextLine();
                                     break;
                             }
                             break;

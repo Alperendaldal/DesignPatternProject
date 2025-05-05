@@ -19,6 +19,8 @@ public class DateSearch implements SearchStrategy {
                 result.add(event);
             }
         }
+        if (result.isEmpty())
+            System.out.println("Event not found");
         return result;
     }
 }

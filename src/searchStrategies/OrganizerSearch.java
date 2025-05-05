@@ -17,6 +17,8 @@ public class OrganizerSearch implements SearchStrategy {
                 list.add(event);
 
         }
+        if (list.isEmpty())
+            System.out.println("Event not found");
         return list;
     }
 }

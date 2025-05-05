@@ -20,6 +20,8 @@ public class TagSearch implements SearchStrategy {
                 }
             }
         }
+        if (result.isEmpty())
+            System.out.println("Event not found");
         return result;
 }
 }

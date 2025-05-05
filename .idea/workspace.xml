@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="11: CLI imp">
-      <change afterPath="$PROJECT_DIR$/src/commands/AddCategoryCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/RemoveCategoryCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/RemoveTagCommand.java" afterDir="false" />
+    <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="added location and organizer search method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateCategoriesCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateDateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateDateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateLocationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateLocationCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateNameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateOrganizerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateOrganizerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateTagsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddTagCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateTimeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateTimeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventModification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/invoke/ModificationInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/DateSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/LocationSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/LocationSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/NameSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/NameSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/OrganizerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/OrganizerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +74,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="commands" />
       <recent name="" />
     </key>
   </component>
@@ -126,9 +115,6 @@
       <workItem from="1746091880779" duration="8440000" />
       <workItem from="1746166970998" duration="801000" />
       <workItem from="1746174615109" duration="9178000" />
-      <workItem from="1746184032592" duration="88000" />
-      <workItem from="1746426582536" duration="114000" />
-      <workItem from="1746433443569" duration="7557000" />
     </task>
     <task id="LOCAL-00001" summary="3: Event Modification">
       <option name="closed" value="true" />
@@ -146,15 +132,7 @@
       <option name="project" value="LOCAL" />
       <updated>1746097550724</updated>
     </task>
-    <task id="LOCAL-00003" summary="11: CLI imp">
-      <option name="closed" value="true" />
-      <created>1746184071880</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1746184071880</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,8 +153,7 @@
     <MESSAGE value="3: Event Modification" />
     <MESSAGE value="updated Search method and created register structure" />
     <MESSAGE value="10: Main method imp" />
-    <MESSAGE value="11: CLI imp" />
-    <option name="LAST_COMMIT_MESSAGE" value="11: CLI imp" />
+    <option name="LAST_COMMIT_MESSAGE" value="10: Main method imp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
