@@ -33,7 +33,7 @@ public enum Tag {
         String normalizedInput = input.trim().toUpperCase().replace(' ', '_');
 
         for (Tag tag : Tag.values())
-            if (tag.name().equals(normalizedInput))
+            if (tag.name().equalsIgnoreCase(normalizedInput))
                 return tag;
 
         return null;

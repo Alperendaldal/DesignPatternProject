@@ -16,13 +16,15 @@ public class Event {
     String name;
     LocalDate date;
     LocalTime time;
-    Set<Tag> tags;
-    Set<Category> categories;
+    Set<Tag> tags = new HashSet<>();
+    Set<Category> categories = new HashSet<>();
     String location;
     String organizer;
-    private HashSet<Observer> observers = new HashSet<>();
+    private final HashSet<Observer> observers =  new HashSet<>();
 
-    public Event(){}
+    public Event(){
+
+    }
 
     public Event(String name, LocalDate date, LocalTime time, Set<Tag> tags, Set<Category> categories, String location, String organizer) {
         this.name = name;

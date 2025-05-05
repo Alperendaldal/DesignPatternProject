@@ -39,6 +39,18 @@ public class EventCreator {
         return this.event.getCategories().contains(category);
     }
 
+    public boolean isEventBelongToTag(Tag tag){
+        return this.event.getTags().contains(tag);
+    }
+
+    public Set<Tag> getTags() {
+        return this.event.getTags();
+    }
+    public Set<Category> getCategories() {
+        return this.event.getCategories();
+    }
+
+
     public EventCreator setName(String name) {
 
 
@@ -56,7 +68,8 @@ public class EventCreator {
 
     public EventCreator setLocation(String location) {
         if(location == null || location.isEmpty()) {
-            System.out.println("Location of the event cannot be null or invalid");
+            System.out.println("Location of the event cannot be null or invalid!");
+            hasLocationFieldSet = false;
             return this;
         }
 
@@ -70,6 +83,7 @@ public class EventCreator {
         if(date == null)
         {
             System.out.println("Date of the event cannot be null");
+            hasDateFieldSet = false;
             return this;
         }
 
@@ -82,6 +96,7 @@ public class EventCreator {
         if(time == null)
         {
             System.out.println("Time of the event cannot be null");
+            hasTimeFieldSet = false;
             return this;
         }
         event.setTime(time);
@@ -96,13 +111,11 @@ public class EventCreator {
 
     public EventCreator addCategory(Category category){
         event.addCategory(category);
-        System.out.println("Categories the event currently has".concat(" ").concat(event.getCategories().stream().map(Category::toString).collect(Collectors.joining(", "))));
         return this;
     }
 
     public EventCreator removeCategory(Category category){
         event.removeCategory(category);
-        System.out.println("Categories the event currently has".concat(" ").concat(event.getCategories().stream().map(Category::toString).collect(Collectors.joining(", "))));
         return this;
     }
 
@@ -127,6 +140,7 @@ public class EventCreator {
     public EventCreator setOrganizer(String organizer){
         if(organizer == null || organizer.isEmpty()) {
             System.out.println("Organizer of the event cannot be null or invalid");
+            hasOrganizerSet = false;
             return this;
         }
 

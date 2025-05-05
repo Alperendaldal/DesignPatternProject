@@ -3,6 +3,7 @@ package eventModules;
 import event.Event;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class EventManager {
@@ -26,6 +27,10 @@ public class EventManager {
             }
         }
         return instance;
+    }
+
+    public void printEvents(){
+        System.out.println(this.getEvents().stream().map(Event::toString).collect(Collectors.joining(", ")));
     }
 
     public Set<Member> getMembers() {

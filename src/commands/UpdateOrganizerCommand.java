@@ -16,11 +16,15 @@ public class UpdateOrganizerCommand implements Command {
 
     @Override
     public void execute() {
+        System.out.printf("Event's (with name %s) organizer's name has been changed from %s to %s.", event.getName(), oldOrganizer, newOrganizer);
+        System.out.println();
         event.setOrganizer(newOrganizer);
     }
 
     @Override
     public void undo() {
+        System.out.printf("UNDID! Event's (with name %s) organizer's name has been changed from %s to %s.", event.getName(), newOrganizer, oldOrganizer);
+        System.out.println();
         event.setOrganizer(oldOrganizer);
     }
 }

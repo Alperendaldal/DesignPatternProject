@@ -18,11 +18,17 @@ public class UpdateTimeCommand implements Command {
 
     @Override
     public void execute() {
+        System.out.printf("Event %s's time has been changed from %s to %s.", event.getName(), oldTime.toString(), newTime.toString());
+        System.out.println();
+
         event.setTime(newTime);
     }
 
     @Override
     public void undo() {
+        System.out.printf("UNDID! Event %s's time has been changed from %s to %s.", event.getName(), newTime.toString(), oldTime.toString());
+        System.out.println();
+
         event.setTime(oldTime);
     }
 }

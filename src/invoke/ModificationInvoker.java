@@ -14,5 +14,6 @@ public class ModificationInvoker {
         if (!history.isEmpty()) {
             history.pop().undo();
         }
+        else System.out.println("There is no process to undo!");
     }
 }

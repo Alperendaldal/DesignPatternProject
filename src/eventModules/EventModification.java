@@ -23,8 +23,12 @@ public class EventModification {
         Command command = new UpdateLocationCommand(event, location);
         invoker.executeCommand(command);
     }
-    public void modifyEventCategories(Event event, Set<Category> categories){
-        Command command = new UpdateCategoriesCommand(event, categories);
+    public void addCategoryToEvent(Event event, Category categoryToAdd){
+        Command command = new AddCategoryCommand(event, categoryToAdd);
+        invoker.executeCommand(command);
+    }
+    public void removeCategoryFromEvent(Event event, Category categoryToRemove){
+        Command command = new RemoveCategoryCommand(event, categoryToRemove);
         invoker.executeCommand(command);
     }
 
@@ -38,8 +42,14 @@ public class EventModification {
         invoker.executeCommand(command);
     }
 
-    public void modifyEventTags(Event event, Set<Tag> tags){
-        Command command = new UpdateTagsCommand(event, tags);
+
+    public void addTagToEvent(Event event, Tag tagToAdded){
+        Command command = new AddTagCommand(event, tagToAdded);
+        invoker.executeCommand(command);
+    }
+
+    public void removeTagFromEvent(Event event, Tag tagToRemoved){
+        Command command = new RemoveTagCommand(event, tagToRemoved);
         invoker.executeCommand(command);
     }
 
