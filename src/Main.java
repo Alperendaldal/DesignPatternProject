@@ -497,12 +497,12 @@ public class Main {
                                 case 1:
                                     if (!event.isMemberEnrolled(member)) {
                                         registrar.register(event, member);
-                                        System.out.println("Press enter...");
-                                        a = scanner.nextLine();
 
-                                    } else{ System.out.println("Member already registered");
+                                    } else {
+                                        System.out.println("Member already registered");
+                                    }
                                     System.out.println("Press enter...");
-                                    a = scanner.nextLine();}
+                                    a = scanner.nextLine();
                                     break;
                                 case 2:
                                     registrar.cancel(event, member);
@@ -528,22 +528,21 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Input must be a number. Try again!");
-                e.printStackTrace();
                 scanner.nextLine();
 
 
             } catch (NoSuchElementException e) {
                 System.out.println("Input cannot be empty. Trey again!");
-                e.printStackTrace();
 
                 scanner.nextLine();
 
             } catch (Exception e) {
-                System.out.println("Something went wrong.");
-                e.printStackTrace();
+                System.out.println("Something went wrong. Try again.");
 
                 scanner.nextLine();
-
+            }finally{
+                System.out.println("Press Enter to continue...");
+                scanner.nextLine();
             }
         }
     }
