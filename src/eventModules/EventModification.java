@@ -9,7 +9,6 @@ import invoke.ModificationInvoker;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Set;
 
 public class EventModification {
     private final ModificationInvoker invoker = new ModificationInvoker();
@@ -24,10 +23,25 @@ public class EventModification {
         invoker.executeCommand(command);
     }
     public void addCategoryToEvent(Event event, Category categoryToAdd){
+
+        if(event.getCategories().size() == 3)
+        {
+            System.out.println("Event has reached 3 categories, process cancelled.");
+            return;
+        }
+
+
         Command command = new AddCategoryCommand(event, categoryToAdd);
         invoker.executeCommand(command);
     }
     public void removeCategoryFromEvent(Event event, Category categoryToRemove){
+
+        if(event.getCategories().size() == 1)
+        {
+            System.out.println("Each event should contain at least 1 category, process cancelled.");
+            return;
+        }
+
         Command command = new RemoveCategoryCommand(event, categoryToRemove);
         invoker.executeCommand(command);
     }
@@ -44,11 +58,23 @@ public class EventModification {
 
 
     public void addTagToEvent(Event event, Tag tagToAdded){
+        if(event.getTags().size() == 3)
+        {
+            System.out.println("Event has reached 3 tags, process cancelled.");
+            return;
+        }
+
         Command command = new AddTagCommand(event, tagToAdded);
         invoker.executeCommand(command);
     }
 
     public void removeTagFromEvent(Event event, Tag tagToRemoved){
+        if(event.getTags().size() == 1)
+        {
+            System.out.println("Each event should contain at least 1 tag, process cancelled.");
+            return;
+        }
+
         Command command = new RemoveTagCommand(event, tagToRemoved);
         invoker.executeCommand(command);
     }

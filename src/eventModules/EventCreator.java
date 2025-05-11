@@ -1,7 +1,9 @@
 package eventModules;
+
 import enums.Category;
 import enums.Tag;
 import event.Event;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Set;
@@ -35,17 +37,18 @@ public class EventCreator {
         return hasOrganizerSet;
     }
 
-    public boolean isEventBelongToCategory(Category category){
+    public boolean isEventBelongToCategory(Category category) {
         return this.event.getCategories().contains(category);
     }
 
-    public boolean isEventBelongToTag(Tag tag){
+    public boolean isEventBelongToTag(Tag tag) {
         return this.event.getTags().contains(tag);
     }
 
     public Set<Tag> getTags() {
         return this.event.getTags();
     }
+
     public Set<Category> getCategories() {
         return this.event.getCategories();
     }
@@ -54,8 +57,7 @@ public class EventCreator {
     public EventCreator setName(String name) {
 
 
-
-        if(name != null && name.isEmpty()) {
+        if (name != null && name.isEmpty()) {
             hasNameFieldSet = false;
             System.out.println("Name of the event cannot be null or invalid");
             return this;
@@ -67,7 +69,7 @@ public class EventCreator {
     }
 
     public EventCreator setLocation(String location) {
-        if(location == null || location.isEmpty()) {
+        if (location == null || location.isEmpty()) {
             System.out.println("Location of the event cannot be null or invalid!");
             hasLocationFieldSet = false;
             return this;
@@ -80,8 +82,7 @@ public class EventCreator {
 
     public EventCreator setDate(LocalDate date) {
 
-        if(date == null)
-        {
+        if (date == null) {
             System.out.println("Date of the event cannot be null");
             hasDateFieldSet = false;
             return this;
@@ -92,9 +93,8 @@ public class EventCreator {
         return this;
     }
 
-    public EventCreator setTime(LocalTime time){
-        if(time == null)
-        {
+    public EventCreator setTime(LocalTime time) {
+        if (time == null) {
             System.out.println("Time of the event cannot be null");
             hasTimeFieldSet = false;
             return this;
@@ -109,12 +109,19 @@ public class EventCreator {
         return this;
     }
 
-    public EventCreator addCategory(Category category){
+    public EventCreator addCategory(Category category) {
+        final int categoryCount = event.getCategories().size();
+
+        if (categoryCount == 3) {
+            System.out.println("Max categories reached.(3)");
+            return this;
+        }
+
         event.addCategory(category);
         return this;
     }
 
-    public EventCreator removeCategory(Category category){
+    public EventCreator removeCategory(Category category) {
         event.removeCategory(category);
         return this;
     }
@@ -124,21 +131,28 @@ public class EventCreator {
         return this;
     }
 
-    public EventCreator addTag(Tag tag){
+    public EventCreator addTag(Tag tag) {
+        final int tagCount = event.getTags().size();
+
+
+        if (tagCount == 3) {
+            System.out.println("Max tags reached.(3)");
+            return this;
+        }
+
         event.addTag(tag);
-        System.out.println("Tags the event currently has".concat(" ").concat(event.getTags().stream().map(Tag::toString).collect(Collectors.joining(", "))));
         return this;
     }
 
-    public EventCreator removeTag(Tag tag){
+    public EventCreator removeTag(Tag tag) {
         event.removeTag(tag);
         System.out.println("Tags the event currently has".concat(" ").concat(event.getTags().stream().map(Tag::toString).collect(Collectors.joining(", "))));
         return this;
     }
 
 
-    public EventCreator setOrganizer(String organizer){
-        if(organizer == null || organizer.isEmpty()) {
+    public EventCreator setOrganizer(String organizer) {
+        if (organizer == null || organizer.isEmpty()) {
             System.out.println("Organizer of the event cannot be null or invalid");
             hasOrganizerSet = false;
             return this;
@@ -149,9 +163,10 @@ public class EventCreator {
         return this;
     }
 
-    public boolean isReadyToBuild(){
-        return hasOrganizerSet && hasTimeFieldSet&& hasDateFieldSet&& hasLocationFieldSet&&hasNameFieldSet;
+    public boolean isReadyToBuild() {
+        return hasOrganizerSet && hasTimeFieldSet && hasDateFieldSet && hasLocationFieldSet && hasNameFieldSet && this.event.getCategories().size() > 0 && this.event.getTags().size() > 0;
     }
+
     public Event build() {
 
 

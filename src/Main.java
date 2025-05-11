@@ -59,7 +59,7 @@ public class Main {
 
         EventManager manager = EventManager.getInstance();
 
-        manager.addEvent(new Event("event", LocalDate.of(2000, 10, 10), LocalTime.now(), new HashSet<>(), new HashSet<>(), "location", "organizer"));
+        manager.addEvent(new Event("Example Event", LocalDate.of(2000, 10, 10), LocalTime.now(), new HashSet<>(), new HashSet<>(), "Example Location", "Organizer"));
 
 
         int option;
@@ -102,10 +102,8 @@ public class Main {
                             System.out.println("3. Location " + (creator.isHasLocationFieldSet() ? "✔" : "❌"));
                             System.out.println("4. Date " + (creator.isHasDateFieldSet() ? "✔" : "❌"));
                             System.out.println("5. Time " + (creator.isHasTimeFieldSet() ? "✔" : "❌"));
-
-                            System.out.println("\nOptional:");
-                            System.out.println("6. Categories: " + "(" + creator.getCategories().size() + ")");
-                            System.out.println("7. Tags: " + "(" + creator.getTags().size() + ")");
+                            System.out.println("6. Categories: " + "(" + creator.getCategories().size() + ") " + (!creator.getCategories().isEmpty() ? "✔" : "❌"));
+                            System.out.println("7. Tags: " + "(" + creator.getTags().size() + ") " + ((!creator.getTags().isEmpty() ? "✔" : "❌")));
 
                             System.out.println("0. Complete");
 
@@ -126,13 +124,31 @@ public class Main {
                                     creator.setLocation(scanner.nextLine());
                                     break;
                                 case 4:
-                                    System.out.println("Enter date (YYYY-MM-DD):");
-                                    creator.setDate(LocalDate.parse(scanner.nextLine()));
+                                    while (true) {
+                                        System.out.println("Enter date (YYYY-MM-DD):");
+                                        String dateInput = scanner.nextLine();
+                                        try {
+                                            creator.setDate(LocalDate.parse(dateInput));
+                                            break;
+                                        } catch (Exception e) {
+                                            System.out.println("Invalid date format. Please try again!");
+                                        }
+                                    }
                                     break;
+
                                 case 5:
-                                    System.out.println("Enter time (HH:MM):");
-                                    creator.setTime(LocalTime.parse(scanner.nextLine()));
+                                    while (true) {
+                                        System.out.println("Enter time (HH:MM):");
+                                        String timeInput = scanner.nextLine();
+                                        try {
+                                            creator.setTime(LocalTime.parse(timeInput));
+                                            break;
+                                        } catch (Exception e) {
+                                            System.out.println("Invalid time format. Please try again!");
+                                        }
+                                    }
                                     break;
+
                                 case 6:
                                     System.out.println("Categories:");
                                     boolean isCategorySelection = true;
@@ -472,7 +488,7 @@ public class Main {
                         }
                         for (Event result : results) System.out.println(result.getName());
                         System.out.println("Press any key...");
-                        String a = scanner.nextLine();
+                        scanner.nextLine();
                         break;
 
                     case 4:
@@ -502,12 +518,12 @@ public class Main {
                                         System.out.println("Member already registered");
                                     }
                                     System.out.println("Press enter...");
-                                    a = scanner.nextLine();
+                                    scanner.nextLine();
                                     break;
                                 case 2:
                                     registrar.cancel(event, member);
                                     System.out.println("Press enter...");
-                                    a = scanner.nextLine();
+                                    scanner.nextLine();
                                     break;
                             }
                             break;
@@ -517,7 +533,7 @@ public class Main {
                         break;
 
                     case 5:
-                        scanner.close();
+
                         System.out.println("Closing...");
                         return;
 
@@ -540,9 +556,10 @@ public class Main {
                 System.out.println("Something went wrong. Try again.");
 
                 scanner.nextLine();
-            }finally{
+            } finally {
                 System.out.println("Press Enter to continue...");
                 scanner.nextLine();
+
             }
         }
     }
