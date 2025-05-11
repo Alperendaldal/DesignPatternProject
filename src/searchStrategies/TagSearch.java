@@ -10,6 +10,7 @@ import java.util.Set;
 public class TagSearch implements SearchStrategy {
     @Override
     public List<Event> search(List<Event> events, String keyword){
+        Tag.printAllTags();
         List<Event> result = new ArrayList<>();
         for (Event event : events) {
             Set<Tag> tags = event.getTags();

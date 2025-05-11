@@ -12,6 +12,7 @@ import java.util.Set;
 public class CategorySearch implements SearchStrategy {
 
     public List<Event> search(List<Event> events, String keyword){
+        Category.printAllCategories();
         List<Event> result = new ArrayList<>();
         for (Event event : events) {
             Set<Category> categories = event.getCategories();

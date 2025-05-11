@@ -60,6 +60,7 @@ public class Main {
         EventManager manager = EventManager.getInstance();
 
         manager.addEvent(new Event("Example Event", LocalDate.of(2000, 10, 10), LocalTime.now(), new HashSet<>(), new HashSet<>(), "Example Location", "Organizer"));
+        manager.addEvent(new Event("Example Event 2", LocalDate.of(2010, 12, 12), LocalTime.now(), new HashSet<>(), new HashSet<>(), "Example Location 2", "Organizer 2"));
 
 
         int option;
@@ -79,9 +80,10 @@ public class Main {
             System.out.println();
             System.out.println("1. Create Event");
             System.out.println("2. Modify Event");
-            System.out.println("3. Search Event");
-            System.out.println("4. Enroll for an Event");
-            System.out.println("5. Exit");
+            System.out.println("3. Sort by name ");
+            System.out.println("4. Search Event");
+            System.out.println("5. Enroll for an Event");
+            System.out.println("6. Exit");
 
 
             try {
@@ -440,6 +442,27 @@ public class Main {
                         break;
 
                     case 3:
+                        System.out.println("Choose ascending or descending order:");
+                        System.out.println("Ascending order: 1");
+                        System.out.println("Descending order: 2");
+                        List<Event> result = new ArrayList<>();
+                        NameSearch nameSearch = new NameSearch();
+                        option = scanner.nextInt();
+                        switch (option){
+                            case 1:
+                                result = nameSearch.sortByNameAscending(manager.getEvents());
+                                break;
+                            case 2:
+                                result = nameSearch.sortByNameDescending(manager.getEvents());
+                                break;
+                            default:
+                                System.out.println("Invalid operation");
+                                break;
+                        }
+                        printEvents(result);
+                        break;
+
+                    case 4:
                         EventSearchModule searcher = manager.getEventSearcher();
                         System.out.println("choose search options:");
                         System.out.println("Search according to name: 1");
@@ -486,12 +509,11 @@ public class Main {
                                 System.out.println("Invalid operation");
                                 break;
                         }
-                        for (Event result : results) System.out.println(result.getName());
-                        System.out.println("Press any key...");
-                        scanner.nextLine();
+
+                        printEvents(results);
                         break;
 
-                    case 4:
+                    case 5:
                         EventRegistration registrar = manager.getEventRegistrar();
 
                         System.out.println("Enter your name:");
@@ -532,7 +554,7 @@ public class Main {
 
                         break;
 
-                    case 5:
+                    case 6:
 
                         System.out.println("Closing...");
                         return;

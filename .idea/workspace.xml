@@ -7,8 +7,8 @@
     <list default="true" id="75e471cb-1b1d-4890-a0ab-74b13d661aa3" name="Changes" comment="added location and organizer search method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eventModules/EventModification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventModules/EventModification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/CategorySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/searchStrategies/TagSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Alperendaldal/DesignPatternProject.git&quot;,
-    &quot;accountId&quot;: &quot;d3eccf2a-c157-403b-bfbb-d16c2c2f028c&quot;
+    &quot;accountId&quot;: &quot;ca8e6c31-9922-4677-876c-ff7b668b7065&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -90,8 +90,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
       </set>
     </attachedChunks>
   </component>
@@ -111,9 +111,6 @@
       <workItem from="1746091880779" duration="8440000" />
       <workItem from="1746166970998" duration="801000" />
       <workItem from="1746174615109" duration="9178000" />
-      <workItem from="1746611418107" duration="1481000" />
-      <workItem from="1746613163305" duration="753000" />
-      <workItem from="1746950205376" duration="1022000" />
     </task>
     <task id="LOCAL-00001" summary="3: Event Modification">
       <option name="closed" value="true" />
