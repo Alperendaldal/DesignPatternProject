@@ -115,22 +115,22 @@ public class Main {
                             switch (fieldOption) {
                                 case 1:
                                     System.out.println("Enter event name:");
-                                    creator.setName(scanner.nextLine());
+                                    creator = creator.setName(scanner.nextLine());
                                     break;
                                 case 2:
                                     System.out.println("Enter organizer:");
-                                    creator.setOrganizer(scanner.nextLine());
+                                    creator = creator.setOrganizer(scanner.nextLine());
                                     break;
                                 case 3:
                                     System.out.println("Enter location:");
-                                    creator.setLocation(scanner.nextLine());
+                                    creator = creator.setLocation(scanner.nextLine());
                                     break;
                                 case 4:
                                     while (true) {
                                         System.out.println("Enter date (YYYY-MM-DD):");
                                         String dateInput = scanner.nextLine();
                                         try {
-                                            creator.setDate(LocalDate.parse(dateInput));
+                                            creator = creator.setDate(LocalDate.parse(dateInput));
                                             break;
                                         } catch (Exception e) {
                                             System.out.println("Invalid date format. Please try again!");
@@ -143,7 +143,7 @@ public class Main {
                                         System.out.println("Enter time (HH:MM):");
                                         String timeInput = scanner.nextLine();
                                         try {
-                                            creator.setTime(LocalTime.parse(timeInput));
+                                            creator = creator.setTime(LocalTime.parse(timeInput));
                                             break;
                                         } catch (Exception e) {
                                             System.out.println("Invalid time format. Please try again!");
@@ -186,7 +186,7 @@ public class Main {
                                                     continue;
                                                 }
 
-                                                creator.addCategory(category);
+                                                creator = creator.addCategory(category);
 
                                                 System.out.println("Category ".concat(category.toString()).concat(" added successfully"));
                                                 break;
@@ -209,7 +209,7 @@ public class Main {
                                                 if (!creator.isEventBelongToCategory(categoryToRemove))
                                                     System.out.println("Category '" + categoryToRemoveString + "' is not belongs to that event.");
                                                 else {
-                                                    creator.removeCategory(categoryToRemove);
+                                                    creator = creator.removeCategory(categoryToRemove);
                                                     System.out.println("Tag '" + categoryToRemoveString + "' removed successfully.");
                                                 }
                                                 break;
@@ -260,7 +260,7 @@ public class Main {
                                                 if (creator.isEventBelongToTag(tagToAdd))
                                                     System.out.println("Tag '" + tagToAddString + "' already exists.");
                                                 else {
-                                                    creator.addTag(tagToAdd);
+                                                    creator = creator.addTag(tagToAdd);
                                                     System.out.println("Tag '" + tagToAddString + "' added successfully.");
                                                 }
                                                 break;
@@ -284,7 +284,7 @@ public class Main {
                                                 if (!creator.isEventBelongToTag(tagToRemove))
                                                     System.out.println("Tag '" + tagToRemoveString + "' not belongs to that event.");
                                                 else {
-                                                    creator.removeTag(tagToRemove);
+                                                    creator = creator.removeTag(tagToRemove);
                                                     System.out.println("Tag '" + tagToRemoveString + "' removed successfully.");
                                                 }
                                                 break;
